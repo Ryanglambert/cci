@@ -23,6 +23,9 @@ class StackSet(object):
         self.size_limit = size_limit
         self._stacks = [[]]
 
+    def __repr__(self):
+        return str(self._stacks)
+
     def push(self, item):
         self._ensure_stack_limit()
         self._stacks[-1].append(item)
