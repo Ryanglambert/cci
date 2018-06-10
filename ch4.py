@@ -48,11 +48,5 @@ def is_directed_route(origin_node: DirectedNode, dest_node: DirectedNode):
 
 def is_route_either_way(node1: DirectedNode, node2: DirectedNode):
     "checks for a route to and from each node to the other"
-    first_route_present = is_directed_route(node1, node2)
-    if first_route_present:
-        return True
-    second_route_present = is_directed_route(node2, node1)
-    if second_route_present:
-        return True
-    return False
+    return (is_directed_route(node1, node2) or is_directed_route(node2, node1))
 
